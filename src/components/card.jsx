@@ -6,7 +6,7 @@ import React, { useState } from "react";
 import { Cartvalue } from "./cartvalue";
 import { NavLink } from "react-router-dom";
 import { useCartContext } from "./cartcontext";
-import Example from "./modal";
+
 function BasicExample({ prop }) {
   const { addtobag } = useCartContext();
   const [value, setvalue] = useState(1);
@@ -41,8 +41,10 @@ function BasicExample({ prop }) {
               value={value}
             ></Cartvalue>
             <NavLink onClick={() => addtobag(value, prop)}>
-             <Example></Example>
-              
+             
+              <button className="button">
+                Add Item
+              </button>
             </NavLink>
           </Card.Body>
         </Card>

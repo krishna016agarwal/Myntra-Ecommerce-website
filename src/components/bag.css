@@ -33,7 +33,7 @@
     margin-bottom: 5px;
     margin-top: 5px;
   border: 0.01px solid rgb(224, 223, 223);
-    height: 200px;
+    height: 230px;
     display: flex;
     min-width: 400px;
 }
@@ -132,6 +132,10 @@ padding: 10px;
 }
 .discount{
     color:rgb(0, 183, 122)
+}
+.quantity{
+    display: flex;
+    
 }
 @media screen and (max-width:850px){
     .body{

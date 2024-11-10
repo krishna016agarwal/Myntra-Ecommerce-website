@@ -2,13 +2,13 @@ import "./cardvalue.css";
 export const Cartvalue = ({ value, setDecrease, setincrease }) => {
   return (
     <div className="val">
-      <button onClick={() => setDecrease()} className="dec">
+      <span onClick={() => setDecrease()} className="dec countdown">
         -
-      </button>
-      <p className="value">{value}</p>
-      <button onClick={() => setincrease()} className="dec">
+      </span>
+      <span className="value countdown">{value}</span>
+      <span onClick={() => setincrease()} className="dec countdown">
         +
-      </button>
+      </span>
     </div>
   );
 };

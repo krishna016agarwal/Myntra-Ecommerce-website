@@ -16,20 +16,20 @@ function Example() {
 
       <Offcanvas show={show} onHide={handleClose}>
         <Offcanvas.Header closeButton></Offcanvas.Header>
-        <img src={myntra}></img>
+       
         <Offcanvas.Body>
           <div
             className="contain"
             style={{ display: "flex", flexDirection: "column" }}
           >
-            <NavLink className="link" to="/men" style={{ margin: "10px 50px" }}>
+            <NavLink className="link" to="/men" style={{ margin: "10px 50px" }}  onClick={handleClose}>
               Men
             </NavLink>
 
             <NavLink
               className="link"
               to="/women"
-              style={{ margin: "10px 50px" }}
+              style={{ margin: "10px 50px" }} onClick={handleClose}
             >
               Women
             </NavLink>
@@ -37,7 +37,7 @@ function Example() {
             <NavLink
               className="link"
               to="/kids"
-              style={{ margin: "10px 50px" }}
+              style={{ margin: "10px 50px" }} onClick={handleClose}
             >
               Kids
             </NavLink>
@@ -45,7 +45,7 @@ function Example() {
             <NavLink
               className="link"
               to="/beauty"
-              style={{ margin: "10px 50px" }}
+              style={{ margin: "10px 50px" }} onClick={handleClose}
             >
               Beauty
             </NavLink>
@@ -53,7 +53,7 @@ function Example() {
             <NavLink
               className="link"
               to="/homeliving"
-              style={{ margin: "10px 50px" }}
+              style={{ margin: "10px 50px" }} onClick={handleClose}
             >
               Home & living
             </NavLink>

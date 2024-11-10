@@ -5,7 +5,7 @@ import style from "./item.module.css"
 import { useCartContext } from "./cartcontext";
 import { Cartvalue } from "./cartvalue";
 import React, { useState } from "react";
-import Example from "./modal";
+
 export const Item = () => {
   const items = useContext(Product);
   const params = useParams();
@@ -20,7 +20,7 @@ export const Item = () => {
       product.push(ele);
     }
   });
-  console.log(product);
+  
   const { addtobag } = useCartContext();
   const [value, setvalue] = useState(1);
   const setincrease = () => {
@@ -54,10 +54,12 @@ export const Item = () => {
               setincrease={setincrease}
               value={value}
             ></Cartvalue>
-            <NavLink onClick={() => addtobag(value, product[0])}>
-              <Example >Add To Bag</Example>
-
-            </NavLink>
+           <NavLink onClick={() => addtobag(value, product[0])}>
+             
+             <button className={style.button}>
+               Add Item
+             </button>
+           </NavLink>
         </div>
       </div>
     </>

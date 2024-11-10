@@ -4,11 +4,12 @@ import { Cart } from "./cart";
 import { useCartContext } from "./cartcontext";
 export const Bag = () => {
   const { cart } = useCartContext();
-  console.log(cart);
+  const { addtobag } = useCartContext();
   var total = 0;
 
   {
-    cart.map((ele) => (total = total + Number(ele.price.slice(1)*ele.amount)));
+    cart.map((ele) => (
+     total = total + Number(ele.price.slice(1)*ele.amount)));
   }
   var itemscount=0;
   {

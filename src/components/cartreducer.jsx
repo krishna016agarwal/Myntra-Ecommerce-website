@@ -11,8 +11,15 @@ const cartReducer = (state, action) => {
       deatils: prop.text,
       price2: prop.prize2,
     };
-    if (state.cart.includes(cartProduct)) {
-      cartProduct.amount = cartProduct.amount + 1;
+
+    const existingProductIndex = state.cart.findIndex(
+      (obj) => obj.id === cartProduct.id
+    );
+    if (existingProductIndex !== -1) {
+      const updatecart = [...state.cart];
+    
+      value>10-updatecart[existingProductIndex].amount?updatecart[existingProductIndex].amount +=0:updatecart[existingProductIndex].amount +=value ;
+      return { ...state, cart: updatecart };
     } else {
       return { ...state, cart: [...state.cart, cartProduct] };
     }
