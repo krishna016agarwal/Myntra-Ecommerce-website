@@ -1,0 +1,16 @@
+.val{
+    display: flex;
+    
+    justify-content:space-evenly;
+}
+.dec{
+    border: none;
+    background-color: transparent;
+    font-size: x-large;
+    font-weight: 400;
+}
+.value{
+    margin-top: 15px;
+    font-size: x-large;
+    font-weight: 400;
+}

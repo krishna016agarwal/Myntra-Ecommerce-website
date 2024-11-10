@@ -1,0 +1,39 @@
+/* #root{
+    
+   
+} */
+.fakeheader{
+    width:100%;
+ 
+    height: 71px;
+
+}
+.button3{
+    background-color: rgb(251, 98, 124);
+    border: none;
+    padding: 10px 30px;
+    color: white;
+    margin-top: 18px;
+}
+.color{
+    color:rgb(237, 2, 41);
+    font-weight: 600;
+    text-decoration: none;
+}
+.card{
+    margin-top: 50px;
+   
+}
+.card-title{
+    margin-top: 100px;
+}
+.fakebody{
+  
+    background-color: rgb(255, 233, 237);
+  
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 100;
+}
