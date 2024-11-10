@@ -1,10 +1,12 @@
 import "./bag.css";
-
+import { Cartvalue } from "./cartvalue";
 import { useCartContext } from "./cartcontext";
-
+import React, { useEffect, useState } from "react";
 
 export const Cart = ({ prop }) => {
 
+  const [value, setvalue] = useState(prop.amount);
+ 
   const { removeItem } = useCartContext();
   
   
