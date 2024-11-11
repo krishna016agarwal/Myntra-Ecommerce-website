@@ -1,22 +1,38 @@
 import "./header.css";
 import { useCartContext } from "./cartcontext";
-
-
+import { IoMoonOutline } from "react-icons/io5";
+import { IoSunnyOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
 import { BsHandbag } from "react-icons/bs";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { NavLink } from "react-router-dom";
 import Example from "./sidebar";
+import { React, useContext, useState } from "react";
+import { Themecontext, useThemecontext } from "./themecontext";
 
 export const Header = () => {
+  const { setthemecontext } = useThemecontext();
+  const [theme, settheme] = useState(<IoMoonOutline />);
+  const { currenttheme } = useThemecontext();
+  const handleTheme = () => {
+    if (currenttheme === "light") {
+      settheme(<IoSunnyOutline />);
+      setthemecontext("dark");
+    } else if (currenttheme === "dark") {
+      settheme(<IoMoonOutline />);
+      setthemecontext("light");
+    }
+  };
+
+
   const { cart } = useCartContext();
-  var itemscount=0;
+  var itemscount = 0;
   {
-    cart.map((ele) => itemscount+=ele.amount);
+    cart.map((ele) => (itemscount += ele.amount));
   }
   return (
     <>
-      <div className="header">
+      <div className={currenttheme==="light"?"header":"darkheader"}>
         <Example></Example>
         <div className="img">
           <NavLink className="navbar-brand" to="/">
@@ -30,57 +46,54 @@ export const Header = () => {
         <div className="groups">
           <ul className="list">
             <li className="nav">
-              <NavLink className="link" to="/men">
+              <NavLink className={currenttheme==="light"?"link":"darklink"} to="/men">
                 Men
               </NavLink>
             </li>
             <li className="nav">
-              <NavLink className="link" to="/women">
+              <NavLink className={currenttheme==="light"?"link":"darklink"} to="/women">
                 Women
               </NavLink>
             </li>
             <li className="nav">
-              <NavLink className="link" to="/kids">
+              <NavLink className={currenttheme==="light"?"link":"darklink"}to="/kids">
                 Kids
               </NavLink>
             </li>
 
             <li className="nav">
-              <NavLink className="link" to="/beauty">
+              <NavLink className={currenttheme==="light"?"link":"darklink"} to="/beauty">
                 Beauty
               </NavLink>
             </li>
             <li className="nav">
-              <NavLink className="link" to="/homeliving">
+              <NavLink className={currenttheme==="light"?"link":"darklink"} to="/homeliving">
                 Home & living
               </NavLink>
             </li>
           </ul>
         </div>
-        <div className="search">
+        <div className={currenttheme==="light"?"search":"darksearch"}>
           <HiOutlineMagnifyingGlass />
           <input
-            className="input"
+            className={currenttheme==="light"?"input":"darkinput"}
             type="text"
             placeholder="Search for products,brands and more"
           ></input>
         </div>
-
-        <NavLink className="profile adjust" to="/login">
+        <div className="theme" onClick={() => handleTheme()}>
+          {theme}
+        </div>
+        <NavLink className={currenttheme==="light"?"profile adjust":"darklink darkadjust"} to="/login">
           <IoPersonOutline />
           <p>Profile</p>
         </NavLink>
-        <NavLink className="bag adjust" to="/bag">
-     
-        <div className="box">
-            
-        <BsHandbag />
-            
-            <div className="circle">
-              {itemscount}
-            </div>
-        </div>
-          
+        <NavLink className={currenttheme==="light"?"bag adjust":"darklink darkadjust"} to="/bag">
+          <div className="box">
+            <BsHandbag />
+
+            <div className="circle">{itemscount}</div>
+          </div>
 
           <p>Bag</p>
         </NavLink>
