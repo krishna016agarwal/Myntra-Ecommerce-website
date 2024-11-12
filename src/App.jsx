@@ -54,9 +54,8 @@ const App = () => {
         },
         {
           path: "/item/:itemid",
-          element:<Item></Item>,
+          element: <Item></Item>,
         },
-       
       ],
     },
     {

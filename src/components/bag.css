@@ -11,7 +11,11 @@
     height: 100%;
     width: 80%;
    margin: 50px 80px;
+   
 
+}
+body{
+    background-color: grey;
 }
 .cartsection{
     width: 50%;
