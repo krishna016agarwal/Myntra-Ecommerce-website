@@ -2,10 +2,13 @@ import "./bag.css";
 
 import { Cart } from "./cart";
 import { useCartContext } from "./cartcontext";
+import { useThemecontext } from "./themecontext";
 export const Bag = () => {
+  const { currenttheme } = useThemecontext();
   const { cart } = useCartContext();
   const { addtobag } = useCartContext();
   var total = 0;
+console.log(currenttheme);
 
   {
     cart.map((ele) => (
@@ -29,7 +32,7 @@ export const Bag = () => {
             ))}
           </div>
 
-          <div className="subtotal">
+          <div className={currenttheme === "light" ? "subtotal" : "darksubtotal"}>
             <h5 className="pricedetails">PRICE DETAILS</h5>
             <span>({itemscount} Items)</span>
             <div className="cashsection">

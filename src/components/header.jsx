@@ -7,7 +7,7 @@ import { BsHandbag } from "react-icons/bs";
 import { HiOutlineMagnifyingGlass } from "react-icons/hi2";
 import { NavLink } from "react-router-dom";
 import Example from "./sidebar";
-import { React, useContext, useState } from "react";
+import { React, useContext, useEffect, useState } from "react";
 import { Themecontext, useThemecontext } from "./themecontext";
 
 export const Header = () => {
@@ -16,6 +16,7 @@ export const Header = () => {
   const { currenttheme } = useThemecontext();
   const handleTheme = () => {
     if (currenttheme === "light") {
+
       settheme(<IoSunnyOutline />);
       setthemecontext("dark");
     } else if (currenttheme === "dark") {
@@ -23,14 +24,18 @@ export const Header = () => {
       setthemecontext("light");
     }
   };
-
+useEffect(()=>{
+  document.body.className=currenttheme
+},[currenttheme])
   const { cart } = useCartContext();
   var itemscount = 0;
   {
     cart.map((ele) => (itemscount += ele.amount));
   }
+ 
   return (
     <>
+    
       <div className={currenttheme === "light" ? "header" : "darkheader"}>
         <Example></Example>
         <div className="img">

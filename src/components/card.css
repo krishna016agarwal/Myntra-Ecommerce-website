@@ -4,9 +4,16 @@
 }
 .card{
     margin:20px;
-   
+  
 }
-
+.card-body{
+    background-color: rgb(254, 253, 253);
+}
+.darkcardbody{
+    background-color: rgb(130, 130, 130);
+    color:white;
+    border: none;
+}
 .btn {
  margin-top: 20px;
  background-color: pink;
@@ -33,10 +40,21 @@
     color: white;
     margin: 18px 58px;
 }
+.darkbutton{
+    background-color: rgb(3, 3, 3);
+    border: none;
+    padding: 10px 30px;
+    color: white;
+    margin: 18px 58px;
+}
 .button:hover{
     background-color: rgb(62, 210, 84);
+    
    
-}@media screen and (max-width:984px){
+}
+.darkbutton:hover{
+    background-color:  rgb(251, 98, 124);}
+    @media screen and (max-width:984px){
     .card{
         margin-left: 105px;
     }

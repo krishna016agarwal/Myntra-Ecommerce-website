@@ -29,7 +29,17 @@ body{
    text-align: center;
    border: 0.01px solid rgb(224, 223, 223);
    height: 400px;
+  background-color: white;
+  color:black;
  
+}
+.darksubtotal{
+    width: 300px;
+    text-align: center;
+    border: 0.01px solid rgb(9, 0, 0);
+    height: 400px;
+  background-color: rgb(95, 95, 96); 
+  color:white;
 }
 .item{
     width: 90%;
@@ -40,7 +50,21 @@ body{
   border: 0.01px solid rgb(224, 223, 223);
     height: 230px;
     display: flex;
-    min-width: 400px;
+   
+    min-width: 350px;
+}
+.darkitem{
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+ 
+    height: 230px;
+    display: flex;
+    background-color: rgb(95, 95, 96); 
+  color:white;
+    min-width: 350px;
 }
 .image{
 
@@ -146,10 +170,16 @@ padding: 10px;
     
     .subtotal{
         margin-left: 50px;
+    }
+    .darksubtotal{
+        margin-left: 50px;
     }}
     @media screen and (max-width:870px){
     
         .subtotal{
+            margin-left: 90px;
+        }
+        .darksubtotal{
             margin-left: 90px;
         }
     @media screen and (max-width:850px){
@@ -157,9 +187,14 @@ padding: 10px;
      
      margin-left: 0px;
         }
+        .darksubtotal{
+     
+            margin-left: 0px;
+               }
     .body{
         display: block;
     }}
+    
     
 }
 
@@ -175,7 +210,7 @@ padding: 10px;
 }
 @media screen and (max-width:405px){
     .body{
-        margin: 50px 0px;
+        margin: 50px 4px;
         display: block;
     }
     .title2{
@@ -187,23 +222,21 @@ padding: 10px;
     .subtotal{
         width: 100%;
     }
+    .darksubtotal{
+        width: 100%;
+    }
 }
-@media screen and (max-width:400x){
+@media screen and (max-width:402x){
 .item{
     min-width: none;
+}
+.darkitem{
+    min-width: 0;
+}
+.body{
+    margin: 50px 4px;
 }
 }
 
 
  
-
-@media screen and (max-width:330px){
-    .subtotal{
-   width: 190%;
-    
-    }}
-    @media screen and (max-width:285px){
-        .subtotal{
-       width: 160%;
-        
-        }}

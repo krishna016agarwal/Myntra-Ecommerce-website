@@ -1,12 +1,14 @@
 import style from "./login.module.css";
 import { NavLink, useNavigate } from "react-router-dom"
+import { useThemecontext } from "./themecontext";
 export const Login = () => {
+  const { currenttheme } = useThemecontext()
   return (
     <>
     
       <div className={style.fakeheader}></div>
-     <div className={style.fullbody}>
-     <div className={style.body}>
+     <div className={currenttheme === "light" ? `${style.fullbody}` : `${style.darkfullbody}`}>
+     <div className={currenttheme === "light" ? `${style.body}` : `${style.darkbody}`}>
         <div className={style.topic}>Login or Signup</div>
         <div className={style.name}></div>
         <input className={style.input} type="text" placeholder="Enter Name"></input>

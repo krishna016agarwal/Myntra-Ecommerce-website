@@ -6,9 +6,11 @@ import React, { useState } from "react";
 import { Cartvalue } from "./cartvalue";
 import { NavLink } from "react-router-dom";
 import { useCartContext } from "./cartcontext";
+import { useThemecontext } from "./themecontext";
 
 function BasicExample({ prop }) {
   const { addtobag } = useCartContext();
+  const { currenttheme } = useThemecontext();
   const [value, setvalue] = useState(1);
   const setincrease = () => {
     value < 10 ? setvalue(value + 1) : setvalue(10);
@@ -27,7 +29,7 @@ function BasicExample({ prop }) {
               style={{ cursor: "pointer" }}
             />
           </NavLink>
-          <Card.Body>
+          <Card.Body className={currenttheme === "light" ? "cardbody" : "darkcardbody"}>
             <Card.Title>{prop.title}</Card.Title>
             <Card.Text>{prop.text}</Card.Text>
             <Card.Text>
@@ -42,7 +44,7 @@ function BasicExample({ prop }) {
             ></Cartvalue>
             <NavLink onClick={() => addtobag(value, prop)}>
              
-              <button className="button">
+              <button className={currenttheme === "light" ? "button" : "darkbutton"}>
                 Add Item
               </button>
             </NavLink>

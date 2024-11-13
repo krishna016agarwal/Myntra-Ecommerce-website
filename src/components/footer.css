@@ -8,7 +8,9 @@
     background-color: black;
 }
 
-
+.dd{
+    color:white
+}
 .category{
     display: flex;
     flex-wrap: wrap;

@@ -6,7 +6,7 @@ import { Kids } from "./components/kids";
 import { Beauty } from "./components/beauty";
 import { Homeliving } from "./components/homeliving";
 import { Home } from "./components/home";
-
+import "./App.css";
 import Applayout2 from "./components/applayout2";
 import { Error } from "./components/error";
 import Profile from "./components/profile";

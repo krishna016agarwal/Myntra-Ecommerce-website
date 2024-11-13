@@ -2,9 +2,10 @@ import "./bag.css";
 import { Cartvalue } from "./cartvalue";
 import { useCartContext } from "./cartcontext";
 import React, { useEffect, useState } from "react";
+import { useThemecontext } from "./themecontext";
 
 export const Cart = ({ prop }) => {
-
+  const { currenttheme } = useThemecontext();
   const [value, setvalue] = useState(prop.amount);
  
   const { removeItem } = useCartContext();
@@ -12,7 +13,7 @@ export const Cart = ({ prop }) => {
   
   return (
     <>
-      <div className="item">
+      <div className={currenttheme === "light" ? "item" : "darkitem"}>
         <div className="image">
           <img src={prop.image} className="img2" alt="..." />
         </div>
