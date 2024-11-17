@@ -8,7 +8,7 @@ export const Bag = () => {
   const { cart } = useCartContext();
   const { addtobag } = useCartContext();
   var total = 0;
-console.log(currenttheme);
+
 
   {
     cart.map((ele) => (

@@ -5,12 +5,32 @@ import React, { useEffect, useState } from "react";
 import { useThemecontext } from "./themecontext";
 
 export const Cart = ({ prop }) => {
+  console.log(prop);
+
+  const { addtobag } = useCartContext();
+  const setincrease = () => {
+  
+
+    if (prop.amount < 10) {
+      setvalue(value + 1);
+      addtobag(1, prop);
+    } else {
+      setvalue(10);
+    }
+  };
+  const setDecrease = () => {
+    if (prop.amount > 1) {
+      setvalue(value - 1);
+      addtobag(-1, prop);
+    } else {
+      setvalue(1);
+    }
+  };
   const { currenttheme } = useThemecontext();
   const [value, setvalue] = useState(prop.amount);
- 
+
   const { removeItem } = useCartContext();
-  
-  
+
   return (
     <>
       <div className={currenttheme === "light" ? "item" : "darkitem"}>
@@ -22,7 +42,11 @@ export const Cart = ({ prop }) => {
           <div className="title2">{prop.deatils}</div>
           <div className="quantity">
             Qty:{value}
-          
+            <Cartvalue
+              setDecrease={setDecrease}
+              setincrease={setincrease}
+              value={value}
+            ></Cartvalue>
           </div>
           <span className="price">price:{prop.price}</span>
 

@@ -55,6 +55,7 @@ export const Item = () => {
           ></Cartvalue>
 
           <NavLink onClick={() => addtobag(value, product[0])}>
+          
             <button className={style.button}>Add Item</button>
           </NavLink>
         </div>
