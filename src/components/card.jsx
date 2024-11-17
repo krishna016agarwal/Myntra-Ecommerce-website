@@ -21,7 +21,7 @@ function BasicExample({ prop }) {
   return (
     <>
       <div className="child">
-        <Card style={{ width: "18rem" }} className="card">
+        <Card style={{ width: "18rem",height:"45rem"}} className="card">
           <NavLink to={`/item/${prop.id}`}>
             <Card.Img
               variant="top"
